@@ -1,53 +1,42 @@
-# Resource guide
+# Reference shelf
 
-This is a curated starting point, not a required reading list. Choose material that fits your project and verify tool documentation for the version you use. Some standards and books may require purchase or institutional access.
+Use these resources to answer questions raised by the projects, rather than trying to read everything first. Start with the source nearest to the device or protocol you are studying; consult a hardware or firmware specialist when moving from a UX prototype to a real circuit.
 
-## Interaction and product design
+## Your electronics reference
 
-- **Don Norman, _The Design of Everyday Things_** — affordances, feedback, mappings, and human error; useful when evaluating physical controls.
-- **Alan Cooper et al., _About Face: The Essentials of Interaction Design_** — interaction goals, scenarios, and behavior definition.
-- **William Lidwell, Kritina Holden, and Jill Butler, _Universal Principles of Design_** — concise reference for design principles; use principles as prompts, not substitutes for user evidence.
-- **IDEO.org, _The Field Guide to Human-Centered Design_** — practical introduction to research and iterative design, available at [designkit.org/resources](https://www.designkit.org/resources).
-- **Nielsen Norman Group, usability heuristics** — a review checklist for interface behavior; heuristics are diagnostic prompts, not a user test: [nngroup.com/articles/ten-usability-heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/).
+- **Paul Scherz and Simon Monk, _Practical Electronics for Inventors_** — use the index to find chapters/sections on electricity, microcontrollers, op-amps, analog signals, ADC/DAC, and power supplies. Editions vary, so follow the headings in your copy. Pair a concept with a small annotated block diagram; do not treat the book alone as a validated audio-interface design.
 
-## Audio, instruments, and music workflows
+## MIDI and controller prototyping
 
-- **Ableton Learning Music** — browser-based, interactive introduction to rhythm, notes, and musical building blocks: [learningmusic.ableton.com](https://learningmusic.ableton.com/).
-- **Sound On Sound, Synth Secrets** — an accessible series exploring sound synthesis and timbre: [soundonsound.com/series/synth-secrets](https://www.soundonsound.com/series/synth-secrets).
-- **MIDI Association, MIDI basics** — background on MIDI messages and related concepts: [midi.org/midi-articles](https://midi.org/midi-articles).
-- **AES Standards** — professional audio standards catalog; many documents are technical or access-controlled: [aes.org/standards](https://www.aes.org/standards/).
+- **MIDI Association, MIDI articles and specifications** — primary background on MIDI messages and standards: [midi.org](https://midi.org/).
+- **Arduino documentation** — board and programming references if you choose an Arduino-based controller: [docs.arduino.cc](https://docs.arduino.cc/).
+- **FortySevenEffects Arduino MIDI Library** — a widely used library for MIDI on Arduino-compatible boards; consult its own documentation and examples for supported transports and board requirements: [github.com/FortySevenEffects/arduino_midi_library](https://github.com/FortySevenEffects/arduino_midi_library).
+- **Teensy Audio Library** — examples and documentation for audio experiments on Teensy; useful for a later audio-prototyping stage, not required for a MIDI controller: [pjrc.com/teensy/td_libs_Audio.html](https://www.pjrc.com/teensy/td_libs_Audio.html).
 
-Treat audio terminology as part of the interface: learn enough to ask informed questions, then validate how the intended users describe their work.
+Choose a board only after checking its USB-MIDI support, available controls/inputs, library compatibility, power requirements, and documentation. A connector that fits USB does not by itself tell you whether a device carries MIDI or audio.
 
-## Accessibility and inclusive practice
+## Learning audio paths and interfaces
 
-- **W3C Web Content Accessibility Guidelines (WCAG) 2.2** — useful for screen-based parts of a product, including contrast, text, and interaction: [w3.org/TR/WCAG22](https://www.w3.org/TR/WCAG22/). WCAG does not cover every physical-control or hardware accessibility concern.
-- **W3C WAI resources** — guidance and techniques for accessible digital content: [w3.org/WAI/standards-guidelines](https://www.w3.org/WAI/standards-guidelines/).
-- **Microsoft Inclusive Design** — methods for considering exclusion and diverse use contexts: [inclusive.microsoft.design](https://inclusive.microsoft.design/).
+- **Manufacturer manuals for an interface you own or can borrow** — the most relevant source for its input types, gain, meters, direct monitoring, routing, and driver/software behavior. Use the block diagram and specifications as a starting point; do not assume every interface works the same way.
+- **MIDI Association** — keep MIDI control distinct from audio transport: [midi.org](https://midi.org/).
+- **USB Implementers Forum, document library** — standards background for USB, including class specifications. USB Audio Class material is technical; use it to understand terminology and consult specialists for implementation: [usb.org/documents](https://www.usb.org/documents).
+- **Bela documentation** — an optional platform for interactive, low-latency audio projects, with hardware and software documentation: [learn.bela.io](https://learn.bela.io/).
+- **Pure Data documentation** — a software environment for exploring signal flow and simulating audio behavior without building a circuit: [puredata.info](https://puredata.info/).
 
-For physical products, also evaluate tactile identification, reach, spacing, force, glare, and whether important status is communicated through more than one sensory channel. Include affected users in research where possible.
+When reading about ADC/DAC, I²S, sample rate, bit depth, gain, impedance, or latency, write down the UX implication and the engineering question separately. A UX prototype can validate that users understand a meter; it cannot establish converter performance or electrical safety.
 
-## Prototyping tools
+## Books for design context
 
-Choose one tool that lets you answer your current design question. These are options, not requirements.
+- **Jenifer Tidwell, Charles Brewer, and Aynne Valencia, _Designing Interfaces_** — reusable interaction patterns to critique and adapt for constrained hardware interfaces.
+- **Don Norman, _The Design of Everyday Things_** — useful for feedback, mapping, discoverability, and error recovery in physical controls.
+- **Nicolas Collins, _Handmade Electronic Music_** — hands-on experimental electronics and sound-making; use appropriate safety precautions and distinguish creative circuits from production-ready audio hardware.
 
-- **Penpot** — open-source interface design and prototyping: [penpot.app](https://penpot.app/) and [help.penpot.app](https://help.penpot.app/).
-- **Figma** — interface and interaction prototyping: [help.figma.com](https://help.figma.com/).
-- **Pure Data** — visual programming environment that can be used to simulate sound behavior: [puredata.info](https://puredata.info/).
-- **Cycling '74 Max** — visual environment for prototyping interactive audio and media systems: [docs.cycling74.com](https://docs.cycling74.com/).
-- **Arduino documentation** — optional entry point for low-voltage physical-computing experiments: [docs.arduino.cc](https://docs.arduino.cc/).
-- **Teensy Audio Library** — optional audio experimentation reference for Teensy boards: [pjrc.com/teensy/td_libs_Audio.html](https://www.pjrc.com/teensy/td_libs_Audio.html).
+These complement, rather than replace, observing musicians and testing with the device and workflow you are designing for.
 
-Paper, cardboard, removable labels, and an existing controller are often enough for early tests. Do not build hardware just to make a prototype appear more finished.
+## How to use this list
 
-## Suggested reading sequence
-
-1. Start with one interaction-design reference and the project brief you selected.
-2. Read only enough audio material to model your chosen product's signal path and vocabulary.
-3. Consult accessibility guidance while sketching, rather than waiting until final review.
-4. Learn a prototyping tool when it helps test a specific behavior.
-5. Return to the research and rubric when an implementation choice is uncertain.
-
-## Evaluating a resource
-
-Before relying on a resource, check its author or organization, publication date, intended audience, accessibility, and whether it addresses your product context. Prefer primary documentation for tool behavior and standards. Note where a resource is opinion, a technique, or a formal requirement.
+1. Pick one project and identify what you need to learn next.
+2. Read the relevant textbook section and one primary source (board documentation, protocol material, or device manual).
+3. Draw the signal/control path and annotate terms that are still unclear.
+4. Ask a musician about workflow questions and an engineer about circuit, firmware, and performance questions.
+5. Record what is verified, simulated, assumed, or still unknown in your project notes.

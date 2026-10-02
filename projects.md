@@ -1,92 +1,83 @@
-# Project briefs
+# Project sequence
 
-Use these briefs in order or adapt one to a product you can observe. Each brief can be completed with paper and a facilitator; producing real audio is optional. Protect participant privacy and get permission before recording sessions or sharing their work.
+These projects build technical understanding through UX questions. Work through the first two in order; choose the third based on what you want to learn. You can use a simulator or paper prototype wherever real hardware would add risk without answering the design question.
 
-## Brief 1 — A more legible pedal
+## 1. A small MIDI controller
 
-**Challenge:** redesign the controls and status feedback for a single-effect guitar or instrument pedal so a player can understand and adjust it quickly.
+**Purpose:** learn how a physical control becomes a message and how the message affects a musical tool.
 
-**Questions to investigate**
+**Brief:** design a compact controller for one clearly defined musical task—for example, changing three parameters during a live performance, or controlling transport and levels in a recording session. Avoid designing a general-purpose controller until you understand one user's workflow.
 
-- What does the player need to do with hands occupied or attention on the instrument?
-- Which settings are changed during performance, and which are set-and-forget?
-- How can a player tell whether the effect is on, what mode is active, and what a control changes?
-- What should happen after power loss or an accidental control press?
+**Explore**
 
-**Constraints:** one footswitch, up to four hand-operated controls, optional small display, and no reliance on color alone. These are exercise constraints, not a product specification.
+- Which actions need dedicated controls, and which can share a control through a mode?
+- How will users know which target or mode is active?
+- Does the host provide feedback to the controller, or does the controller only send messages?
+- What happens when a control is moved after switching modes or loading a different patch?
+- Are controls recognizable and usable by touch when the user is looking elsewhere?
 
-**Deliverables:** user/context statement, task flow, two layout sketches, state/feedback table, physical mock-up, and a short test summary.
+**Make:** a task flow, annotated control layout, simple controller prototype (or interaction simulation), and a mapping table connecting control, message, target, and feedback.
 
-**Stretch:** explore a secondary function without making it invisible or easy to trigger accidentally.
+**Test:** ask a musician to connect and use it for the chosen task. Observe setup friction, mode errors, mapping surprises, and whether the physical design supports performance. Revise one important issue.
 
-## Brief 2 — A compact synthesizer
+**Keep in scope:** a few controls and one host workflow. Do not attempt to build an audio interface in this project.
 
-**Challenge:** design an interface for a small synthesizer that supports both immediate sound shaping and deliberate preset management.
+## 2. The first recording: audio-interface UX study
 
-**Questions to investigate**
+**Purpose:** understand the user experience and signal path of an audio interface before considering an electronics build.
 
-- Which sound-shaping parameters should be directly available?
-- How does the user know what a control affects and whether a value is stored?
-- How can a performer move between editing and browsing without losing work?
-- What is the recovery path after changing the wrong parameter or loading a preset?
+**Brief:** choose an existing two-input recording interface and design a clearer first-recording experience for a new user. Use the actual device and manual if available; a faithful mock-up is sufficient for the redesign.
 
-**Constraints:** limited panel area and a small display. Select a manageable set of synthesis concepts; communicate any technical simplifications in the prototype.
+**Investigate**
 
-**Deliverables:** simplified signal-flow diagram, control map, screen hierarchy, two end-to-end flows, working or simulated prototype, and results from a usability test.
+- What connects to each input, and how does the user identify the right connection?
+- How does the user set input gain and recognize clipping?
+- How do direct monitoring and software monitoring differ in this setup?
+- What does the interface's latency control actually affect?
+- How are recording inputs, playback, and headphone monitoring routed?
+- Which device state is unclear in the manual, on the panel, or in its companion software?
 
-**Stretch:** design a safe way to compare an edited sound with its saved version and communicate unsaved changes.
+**Make:** a signal-path diagram based on the manufacturer's documentation, current and revised setup flows, a panel/software prototype, and a state table for input, clipping, monitoring, and disconnect/recovery.
 
-## Brief 3 — A small live mixer
+**Test:** have a beginner and a more experienced recorder complete a short setup task. Use safe levels; no loud playback is needed. Compare where they hesitate and whether the new feedback improves their confidence.
 
-**Challenge:** help a musician set up, monitor, and recover from a common routing or level problem on a compact mixer.
+**Keep in scope:** interface design and documented behavior. Do not fabricate a preamp, converter, power supply, or USB audio device for this exercise.
 
-**Questions to investigate**
+## 3. Choose a next build or study
 
-- What must be confirmed before sound reaches the output?
-- Which signals or routes are easiest to confuse?
-- What status needs to remain visible while the user changes another channel?
-- How does the device communicate muted, clipped, disconnected, or unavailable states?
+Pick one based on your interests. Define one interaction question before selecting a board or tool.
 
-**Constraints:** four input channels, a master output, and no more than one screen. A paper or clickable prototype may simulate metering and audio.
+### A. Improve the controller
 
-**Deliverables:** signal-flow diagram, setup task analysis, control and display layouts, state table, failure/recovery scenarios, and a test report.
+Add a small set of controls, a mode change, or feedback from a host. Prototype how mappings are discovered, edited, and restored. Compare whether a physical mode switch, display, or software companion makes the current state clearest.
 
-**Stretch:** test the design under interruption and reduced visibility, without asking participants to use unsafe sound levels.
+### B. Simulate a sound effect
 
-## Capstone — Design an instrument interaction
+Use a documented audio environment or an existing audio-capable development board to prototype a simple effect interaction. Focus on parameter response, bypass, presets, and indication of active state. State which audio behavior is simulated and which is actually running.
 
-Choose a product or interaction that matters to a real user group. Examples include a portable recorder, MIDI controller, loop station, audio interface, or an original concept.
+### C. Extend the recording-interface study
 
-### Required stages
+Prototype a workflow for setting gain, choosing direct monitoring, or recovering from a disconnected device. Use a real interface as a reference and verify behavior against its manual. Do not claim improved audio quality unless it has been measured using appropriate methods.
 
-1. **Frame:** identify the user, context, need, scope, and assumptions.
-2. **Research:** observe or interview users and document what is evidence versus interpretation.
-3. **Model:** map signal flow, core tasks, and important device states.
-4. **Explore:** compare at least two interaction approaches before committing.
-5. **Prototype:** represent physical controls and screen behavior at a fidelity suited to your research question.
-6. **Evaluate:** run task-based tests, document limitations, and prioritize findings.
-7. **Iterate:** show what changed and why.
-8. **Communicate:** hand off the design with clear states, edge cases, and open questions.
+### D. Explore synthesis or analysis
 
-### Final submission
+For a synthesizer, prototype the relationship between a few sound parameters and their controls. For an analyzer, prototype how a user reads one measurement and decides what to do. Use a software simulator if that keeps the project focused on interaction.
 
-- A concise case study and design journal excerpt.
-- A task flow and signal-flow model.
-- Annotated control layout(s) and display screens, if applicable.
-- A prototype or clearly described simulation.
-- Test plan, anonymized findings, and iteration evidence.
-- Accessibility review, risk notes, and next steps.
+## Portfolio case study
 
-## Review rubric
+Show the reasoning, not just the final panel:
 
-Use this rubric for self-review or peer critique. A high score means the evidence is clear and coherent, not that the design is visually polished.
+1. The user, context, task, and original uncertainty.
+2. The signal path and distinction between audio and control data.
+3. Early alternatives and what evidence led to a choice.
+4. Prototype scope, actual versus simulated behavior, and known limitations.
+5. Test observations, the iteration they prompted, and remaining engineering questions.
 
-| Criterion | Needs work | Developing | Strong |
-| --- | --- | --- | --- |
-| User and context | User or use setting is vague | Main user and setting are stated, with gaps | Design choices are grounded in observed needs and a specific context |
-| Task and signal model | Core task or audio path is unclear | Main flow is represented with some missing states | Tasks, signal path, and critical state changes are easy to follow |
-| Control system | Controls are hard to identify or map | Most controls are understandable, with some mode or labeling ambiguity | Controls are grouped, distinguishable, and predictably mapped |
-| Feedback and recovery | State changes or errors are hidden | Common feedback exists; recovery is incomplete | Important states are legible and errors have practical recovery paths |
-| Prototype and testing | Prototype does not answer a clear question | Prototype supports a task; testing is limited | Prototype targets explicit questions and findings drive iteration |
-| Inclusion and safety | Access needs and risks are not considered | Some needs or risks are documented | Sensory, motor, context, and safety risks are addressed with open issues named |
-| Communication | Rationale and limitations are missing | Main decisions are described | Evidence, decisions, test outcomes, and limitations are traceable |
+## Review checklist
+
+- [ ] The project targets a specific musical task and user context.
+- [ ] Controls have an understandable mapping and visible or tactile state.
+- [ ] Signal, control messages, and software behavior are not conflated.
+- [ ] Latency, clipping, monitoring, or modes are explained where relevant.
+- [ ] A second person tried the prototype and findings informed a revision.
+- [ ] Prototype limitations and engineering/safety questions are explicit.
