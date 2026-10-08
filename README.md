@@ -19,6 +19,7 @@ You already own *Practical Electronics for Inventors*. Use it as a companion whi
 - [`curriculum.md`](curriculum.md) — study sequence, electronics topics, and learning checkpoints.
 - [`projects.md`](projects.md) — a MIDI-controller starter, recording-interface UX study, and optional next steps.
 - [`resources.md`](resources.md) — a short, purpose-driven reference list.
+- [`LOCAL_LLM.md`](LOCAL_LLM.md) — a hardware-aware setup for a local coding assistant that can scale to stronger inference hosts.
 
 ## What “enough technical understanding” means
 
